@@ -1,5 +1,7 @@
 @import "./mixin";
 @import "./classes";
+@import "./mediaquery";
+
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +11,24 @@
 html {
   font-size: 10px;
   font-family: sans-serif;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 9px;
+  }
+
+  @media only screen and (max-width: 1152px) {
+    font-size: 8px;
+  }
+
+  @media only screen and (max-width: 780px) {
+    font-size: 9px;
+  }
+  @media only screen and (max-width: 700px) {
+    font-size: 7px;
+  }
+  @media only screen and (max-width: 550px) {
+    font-size: 5px;
+  }
 }
 
 body {
@@ -77,6 +97,11 @@ body {
         }
       }
     }
+
+    @media only screen and (max-width: 780px) {
+      width: 100vw;
+      transform: translate(-12%, 20%);
+    }
   }
 
   /*MAIN BODY*/
@@ -101,8 +126,17 @@ body {
       flex-direction: column;
       gap: 2rem;
 
+      @media only screen and (min-width: 960px) {
+        flex: 0 0 40%;
+        margin-left: 0;
+        padding: 2rem 0;
+      }
+
       &--header {
         font-size: 3.6rem;
+        @media only screen and (max-width: 1392px) {
+          font-size: 3.4rem;
+        }
       }
 
       &--para {
@@ -178,13 +212,13 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     column-gap: 3rem;
     row-gap: 3rem;
     margin-top: 8rem;
 
     &--card {
-      flex: 0 0 25%;
+      flex: 0 0 30rem;
       padding: 4rem 2.5rem;
       border-radius: 2.1rem;
       border: none;
@@ -259,7 +293,6 @@ body {
   gap: 100vw;
 }
 .slider {
-  // width: 100%;
   flex: 0 0 100%;
   margin: 0 auto 5rem auto;
   padding: 7.5rem 3rem;
@@ -417,15 +450,29 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 3rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 3.5rem;
 }
 .latest__cards {
-  flex: 0 0 30%;
+  flex: 0 0 30rem;
   border-radius: 1rem;
   overflow: hidden;
   border: none;
   box-shadow: 0 0.1rem 2rem rgb(220, 218, 218);
+
+  @media only screen and (max-width: 1260px) {
+    margin: 0 3.5rem;
+  }
+
+  @media only screen and (max-width: 813px) {
+    flex: 0 0 40rem;
+    margin: 2.5rem 3.5rem;
+
+    .latest__cards:last-child {
+      display: block;
+    }
+  }
 
   &--img {
     width: 100%;
@@ -462,13 +509,24 @@ body {
       display: block;
     }
   }
+
+  &:last-child {
+    @media only screen and (max-width: 1260px) {
+      display: none;
+    }
+  }
+  &:last-child {
+    @media only screen and (max-width: 813px) {
+      display: block;
+    }
+  }
 }
 
 // FOOTER
 
 .footer {
   width: 100vw;
-  height: 50vh;
+  padding: 10rem 0;
   background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
 
   display: flex;
