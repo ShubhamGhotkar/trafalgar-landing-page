@@ -71,6 +71,7 @@ body {
   width: var(--width-full);
   margin: var(--margin-auto);
   padding: 1rem 2rem;
+  position: relative;
   /*MAIN BODY*/ }
   .container__header {
     display: flex;
@@ -172,7 +173,8 @@ body {
 .services {
   width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  position: relative; }
   .services-info-h2 {
     text-align: center;
     font-size: 2.8rem;
@@ -201,13 +203,15 @@ body {
     align-items: stretch;
     column-gap: 3rem;
     row-gap: 3rem;
-    margin-top: 8rem; }
+    margin-top: 8rem;
+    z-index: 99; }
     .services__cards--card {
       flex: 0 0 30rem;
       padding: 4rem 2.5rem;
       border-radius: 2.1rem;
       border: none;
       box-shadow: 0 0 2rem #e0dfdf;
+      background-color: white;
       display: flex;
       flex-direction: column;
       gap: 2rem; }
@@ -483,6 +487,27 @@ body {
     .region__list:hover,
     .help__list:hover {
       cursor: pointer; }
+
+/* dot image */
+.dot__container {
+  height: 8rem;
+  width: 6rem;
+  transform: translateX(-50%);
+  position: absolute;
+  left: -5rem;
+  top: 15rem; }
+  .dot__container--img {
+    height: 100%;
+    width: 100%; }
+
+/* SERVICES FRAME */
+.services__Framecontainer {
+  width: 70%;
+  position: absolute;
+  top: 8%;
+  left: -15.5%; }
+  .services__Framecontainer--img {
+    width: 100%; }
 
 :root {
   --text-white: #fff;

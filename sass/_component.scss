@@ -42,6 +42,8 @@ body {
   margin: var(--margin-auto);
   padding: 1rem 2rem;
 
+  position: relative;
+
   &__header {
     @include flexbox;
     justify-content: space-between;
@@ -180,6 +182,8 @@ body {
 
   display: flex;
   flex-direction: column;
+
+  position: relative;
   &-info {
     &-h2 {
       text-align: center;
@@ -216,6 +220,9 @@ body {
     column-gap: 3rem;
     row-gap: 3rem;
     margin-top: 8rem;
+    // background-color: white;
+
+    z-index: 99;
 
     &--card {
       flex: 0 0 30rem;
@@ -223,6 +230,7 @@ body {
       border-radius: 2.1rem;
       border: none;
       box-shadow: 0 0 2rem rgb(224, 223, 223);
+      background-color: white;
 
       display: flex;
       flex-direction: column;
@@ -603,5 +611,36 @@ body {
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+/* dot image */
+
+.dot__container {
+  height: 8rem;
+  width: 6rem;
+  transform: translateX(-50%);
+
+  position: absolute;
+  left: -5rem;
+  top: 15rem;
+
+  &--img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* SERVICES FRAME */
+
+.services__Framecontainer {
+  width: 70%;
+  // background-color: #5a98f2;
+
+  position: absolute;
+  top: 8%;
+  left: -15.5%;
+  &--img {
+    width: 100%;
   }
 }
