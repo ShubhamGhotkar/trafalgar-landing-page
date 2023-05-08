@@ -61,6 +61,12 @@ html {
   @media only screen and (max-width: 550px) {
     html {
       font-size: 5px; } }
+  @media only screen and (max-width: 400px) {
+    html {
+      font-size: 4px; } }
+  @media only screen and (max-width: 300px) {
+    html {
+      font-size: 3px; } }
 
 body {
   width: 100vw;
@@ -261,8 +267,14 @@ body {
 .slider__container {
   width: 80vw;
   margin: 0 auto;
-  display: flex;
-  gap: 100vw; }
+  position: relative; }
+  .slider__container__dot2 {
+    width: 6%;
+    position: absolute;
+    bottom: 17%;
+    left: -5%; }
+    .slider__container__dot2--img {
+      width: 100%; }
 
 .slider {
   flex: 0 0 100%;
@@ -272,7 +284,10 @@ body {
   color: var(--text-white);
   background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
   display: grid;
-  place-items: center; }
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 99; }
   .slider__items {
     width: 80%; }
     .slider__items--header--h2 {
@@ -310,6 +325,22 @@ body {
         font-size: 1.6rem;
         align-items: center;
         line-height: 1.6; }
+  .slider__dot {
+    width: 7%;
+    position: absolute;
+    top: -1.5%;
+    right: 1%; }
+    .slider__dot--img {
+      width: 100%; }
+  .slider__dot2 {
+    width: 7%;
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    background-color: red;
+    z-index: 5000; }
+    .slider__dot2--img {
+      width: 100%; }
 
 .slider-bar {
   width: 80vw;
@@ -425,12 +456,32 @@ body {
 
 .footer {
   width: 100vw;
-  padding: 10rem 0;
+  padding: 10rem 10rem;
   background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 2rem; }
+  gap: 2rem;
+  position: relative; }
+  .footer__dot {
+    width: 10rem;
+    height: 9rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem; }
+    .footer__dot--img {
+      height: 100%;
+      width: 100%; }
+  .footer__dot-2 {
+    width: 10rem;
+    height: 9rem;
+    position: absolute;
+    right: 10rem;
+    top: -8.5rem;
+    transform: rotate(90deg); }
+    .footer__dot-2--img {
+      height: 100%;
+      width: 100%; }
   .footer__container {
     width: 90%;
     display: flex;
@@ -503,11 +554,23 @@ body {
 /* SERVICES FRAME */
 .services__Framecontainer {
   width: 70%;
+  height: 50%;
   position: absolute;
-  top: 8%;
+  top: 30%;
   left: -15.5%; }
   .services__Framecontainer--img {
-    width: 100%; }
+    width: 100%;
+    position: absolute;
+    top: -50%;
+    left: 0; }
+  .services__Framecontainer--dot {
+    width: 12%;
+    position: absolute;
+    right: -62%;
+    top: 46%; }
+
+.hidden {
+  display: none; }
 
 :root {
   --text-white: #fff;

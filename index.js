@@ -3,13 +3,37 @@ const arrowRight = document.querySelector(".arrow-right");
 const dot = document.querySelectorAll(".dot");
 const slider = document.querySelectorAll(".slider");
 
-let sliderIndex = 0;
+let slideIndex = 4;
 
-let arr = [...slider];
+arrowLeft.addEventListener("click", () => {
+  if (slideIndex === 1) {
+    slideIndex = 4;
+  } else {
+    slideIndex--;
+  }
 
-let a = [];
-fetch("https://api.tvmaze.com/search/shows?q=all")
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+  addClass(slideIndex - 1);
+});
+arrowRight.addEventListener("click", () => {
+  if (slideIndex === 4) {
+    slideIndex = 1;
+  } else {
+    slideIndex += 1;
+  }
+  addClass(slideIndex - 1);
+});
 
-console.log(a);
+dot.forEach((dot, indx) => {
+  dot.addEventListener("click", () => {
+    slideIndex = indx + 1;
+    addClass(slideIndex - 1);
+  });
+});
+
+function addClass(ind) {
+  slider.forEach((itm) => itm.classList.add("hidden"));
+  slider[ind].classList.remove("hidden");
+
+  dot.forEach((itm) => itm.classList.remove("active"));
+  dot[ind].classList.add("active");
+}

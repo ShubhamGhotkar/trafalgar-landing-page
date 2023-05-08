@@ -29,6 +29,12 @@ html {
   @media only screen and (max-width: 550px) {
     font-size: 5px;
   }
+  @media only screen and (max-width: 400px) {
+    font-size: 4px;
+  }
+  @media only screen and (max-width: 300px) {
+    font-size: 3px;
+  }
 }
 
 body {
@@ -297,8 +303,20 @@ body {
 .slider__container {
   width: 80vw;
   margin: 0 auto;
-  display: flex;
-  gap: 100vw;
+  // display: flex;
+  // gap: 100vw;
+
+  position: relative;
+
+  &__dot2 {
+    width: 6%;
+    position: absolute;
+    bottom: 17%;
+    left: -5%;
+    &--img {
+      width: 100%;
+    }
+  }
 }
 .slider {
   flex: 0 0 100%;
@@ -311,6 +329,11 @@ body {
 
   display: grid;
   place-items: center;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 99;
+
   &__items {
     width: 80%;
 
@@ -370,6 +393,29 @@ body {
         align-items: center;
         line-height: 1.6;
       }
+    }
+  }
+
+  &__dot {
+    width: 7%;
+    position: absolute;
+    top: -1.5%;
+    right: 1%;
+
+    &--img {
+      width: 100%;
+    }
+  }
+
+  &__dot2 {
+    width: 7%;
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    background-color: red;
+    z-index: 5000;
+    &--img {
+      width: 100%;
     }
   }
 }
@@ -534,13 +580,42 @@ body {
 
 .footer {
   width: 100vw;
-  padding: 10rem 0;
+  padding: 10rem 10rem;
   background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
 
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: 2rem;
+
+  position: relative;
+
+  &__dot {
+    width: 10rem;
+    height: 9rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+
+    &--img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__dot-2 {
+    width: 10rem;
+    height: 9rem;
+    position: absolute;
+    right: 10rem;
+    top: -8.5rem;
+    transform: rotate(90deg);
+
+    &--img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 
   &__container {
     width: 90%;
@@ -635,12 +710,31 @@ body {
 
 .services__Framecontainer {
   width: 70%;
+  height: 50%;
   // background-color: #5a98f2;
+  // z-index: 100;
 
   position: absolute;
-  top: 8%;
+  top: 30%;
   left: -15.5%;
   &--img {
     width: 100%;
+    position: absolute;
+    top: -50%;
+    left: 0;
   }
+
+  &--dot {
+    width: 12%;
+
+    position: absolute;
+
+    right: -62%;
+    top: 46%;
+    // z-index: 1000;
+  }
+}
+
+.hidden {
+  display: none;
 }
