@@ -3,11 +3,18 @@ const arrowRight = document.querySelector(".arrow-right");
 const dot = document.querySelectorAll(".dot");
 const slider = document.querySelectorAll(".slider");
 
-let slideIndex = 4;
+let slideIndex = 1;
+
+window.addEventListener("load", () => {
+  if (slideIndex === 1) {
+    dot[0].classList.add("active--dot");
+    arrowRight.classList.add("active");
+  }
+});
 
 arrowLeft.addEventListener("click", () => {
   if (slideIndex === 1) {
-    slideIndex = 4;
+    slideIndex = 4; 
   } else {
     slideIndex--;
   }

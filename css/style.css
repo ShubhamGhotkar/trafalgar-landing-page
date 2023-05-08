@@ -69,8 +69,7 @@ html {
       font-size: 3px; } }
 
 body {
-  width: 100vw;
-  overflow-x: hidden; }
+  width: 100vw; }
 
 /* HEADER*/
 .container {

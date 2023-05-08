@@ -39,7 +39,7 @@ html {
 
 body {
   width: 100vw;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 /* HEADER*/
@@ -226,7 +226,6 @@ body {
     column-gap: 3rem;
     row-gap: 3rem;
     margin-top: 8rem;
-    // background-color: white;
 
     z-index: 99;
 
@@ -303,8 +302,8 @@ body {
 .slider__container {
   width: 80vw;
   margin: 0 auto;
-  // display: flex;
-  // gap: 100vw;
+
+  // transition: all 4s;
 
   position: relative;
 
@@ -711,8 +710,6 @@ body {
 .services__Framecontainer {
   width: 70%;
   height: 50%;
-  // background-color: #5a98f2;
-  // z-index: 100;
 
   position: absolute;
   top: 30%;
@@ -731,7 +728,6 @@ body {
 
     right: -62%;
     top: 46%;
-    // z-index: 1000;
   }
 }
 
